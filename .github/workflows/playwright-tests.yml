@@ -27,6 +27,9 @@ jobs:
       - name: Install Playwright dependencies
         run: npx playwright install --with-deps
 
+      - name: Clean up existing Playwright reports
+        run: rm -rf playwright-report/
+
       - name: Run Playwright tests
         run: npx playwright test --reporter=html
 
